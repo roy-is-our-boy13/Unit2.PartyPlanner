@@ -8,37 +8,37 @@
     <script defer src="index.js"></script>
   </head>
   <body>
-    <h1>Pary Planner</h1>
-    <form id="">
-        <div>
-      <label>
-        Name:
-        <input type="text" name="" />
-      </label>
-    </div>
-    <div>
-      <label>
-        Date:
-        <input type="text" name="" />
-      </label>
-      </div>
-      <div>
-        <label>
-            Time: <input type="text" name="" />
-        </label>
-      </div>
-      <div>
-        <label>
-            Location: <input type="text" name="" />
-        </label>
-      </div>
-      <div>
-      <button>Add Event</button>
-    </div>
-    </form>
-    <ul id=""></ul>
-
-
-    
+    <section>
+        <h1>Pary Planner</h1>
+        <form id="PartyForm">
+            <div>
+                <label>
+                   Party Name: <input type="text" id="partName" name="" />
+                </label>
+            </div>
+            <div>
+                <label>
+                    Date:<input type="datetime-local" id="DatetimeLocal"/>
+                </label>
+            </div>
+            <div>
+                <label>
+                    Location: <input type="text" id = "location" name=""/>
+                </label>
+            </div>
+            <div>
+                <label>
+                    <div>
+                        <p>Description:</p>  
+                            <textarea id="party-description" required></textarea>
+                    </div>
+                </label>
+            </div>
+            <div>
+                <button type="submit">Add Event</button>
+            </div>
+        </form>
+        <ul id=""></ul>
+    </section>
   </body>
 </html>
