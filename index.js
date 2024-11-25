@@ -1,8 +1,8 @@
 const COHORT = `2109-CPU-RM-WEB-PT`;
 const API_URL = `https://fsa-crud-2aa9294fe819.herokuapp.com/api/${COHORT}/events`;
 
-const form = document.getElementById("PartyForm");
-const list = document.getElementById("listOfParties");
+const form = document.querySelector("#PartyForm");
+const list = document.querySelector("#listOfParties");
 
 form.addEventListener("submit", inputPartyDetails);
 
