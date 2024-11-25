@@ -1,8 +1,8 @@
 const COHORT = `2109-CPU-RM-WEB-PT`;
 const API_URL = `https://fsa-crud-2aa9294fe819.herokuapp.com/api/${COHORT}/events`;
 
-const form = document.querySelector("#PartyForm");
-const list = document.querySelector("#listOfParties");
+const form = document.getElementById("PartyForm");
+const list = document.getElementById("listOfParties");
 
 form.addEventListener("submit", inputPartyDetails);
 
@@ -60,6 +60,8 @@ async function addParty(name, date, location, description)
 
         const json = await response.json();
 
+        console.log("Response from server:", json);
+
         console.log(json);
 
         if (json.error)
@@ -73,7 +75,7 @@ async function addParty(name, date, location, description)
         }
 
         parties.push(json);
-    
+        
         render();
     }
     catch(error)
@@ -95,7 +97,7 @@ async function deleteParty(id)
         { 
             throw new Error("There was an error while trying to delete the party event.");
         }
-    
+
         const newPartiesList = [];
 
         for (let i = 0; i < parties.length; i++) 
@@ -123,6 +125,8 @@ async function render()
 {
     list.innerHTML = "";
     
+    let redloadScreen = false;
+
     for (let i = 0; i < parties.length; i++)
     {
         console.log(`Party ${i}:`, parties[i]);
@@ -137,6 +141,12 @@ async function render()
             <p>${parties[i].description}</p>
             <button class="colorButton" onclick="deleteParty('${parties[i].id}')">Delete</button>`;
         list.appendChild(item);
+
+        if(!redloadScreen)
+        {
+            //location.reload();
+            redloadScreen = true;
+        }
     }
 }
 
@@ -154,4 +164,4 @@ async function inputPartyDetails(event)
     location.reload();
 }
 
-fetchTheListOfParties();etchTheListOfParties();
+fetchTheListOfParties();
