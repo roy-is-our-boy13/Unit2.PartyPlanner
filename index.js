@@ -74,7 +74,9 @@ async function addParty(name, date, location, description)
             parties = [];
         }
 
-        parties.push(json);
+        const fullData = json.data;
+
+        parties.push(fullData);
         
         render();
     }
@@ -111,7 +113,6 @@ async function deleteParty(id)
         }
         
         parties = newPartiesList;
-
         location.reload();
         render();
     }
@@ -125,8 +126,6 @@ async function render()
 {
     list.innerHTML = "";
     
-    let redloadScreen = false;
-
     for (let i = 0; i < parties.length; i++)
     {
         console.log(`Party ${i}:`, parties[i]);
@@ -140,13 +139,7 @@ async function render()
             <p><strong>Location:</strong> ${parties[i].location}</p>
             <p>${parties[i].description}</p>
             <button class="colorButton" onclick="deleteParty('${parties[i].id}')">Delete</button>`;
-        list.appendChild(item);
-
-        if(!redloadScreen)
-        {
-            //location.reload();
-            redloadScreen = true;
-        }
+        list.appendChild(item); 
     }
 }
 
@@ -161,7 +154,6 @@ async function inputPartyDetails(event)
 
     addParty(nameOfParty, dateAndTimeOfParty, partyLocation, descriptionOfParty);
     form.reset();
-    location.reload();
 }
 
 fetchTheListOfParties();
