@@ -7,38 +7,41 @@
     <link rel="stylesheet" href="index.css" />
     <script defer src="index.js"></script>
   </head>
-  <body>
-    <section>
-        <h1>Pary Planner</h1>
-        <form id="PartyForm">
-            <div>
+  <body class = "formBox">
+    <section class = "formBox">
+        <h1 class = "HeaderFormat">Party Planner</h1>
+        <form id="PartyForm" class = "formBox">
+            <div class = "textMargin">
                 <label>
-                   Party Name: <input type="text" id="partName" name="" />
+                   Party Name: <input type="text" id="partyName" name="partyName" required/>
+                </label>
+            </div>
+            <div class = "textMargin">
+                <label>
+                    Date: <input type="datetime-local" id="DatetimeLocal" required/>
+                </label>
+            </div>
+            <div class = "textMargin">
+                <label>
+                    Location: <input type="text" id="location" name="location" required/>
                 </label>
             </div>
             <div>
                 <label>
-                    Date:<input type="datetime-local" id="DatetimeLocal"/>
-                </label>
-            </div>
-            <div>
-                <label>
-                    Location: <input type="text" id = "location" name=""/>
-                </label>
-            </div>
-            <div>
-                <label>
-                    <div>
-                        <p>Description:</p>  
-                            <textarea id="party-description" required></textarea>
+                    <div class = "textMargin">
+                        <p>Description: </p>  
+                            <textarea id="description" required></textarea>
                     </div>
                 </label>
             </div>
             <div>
-                <button type="submit">Add Event</button>
+                <button class ="colorButton" type="submit">Add Event</button>
             </div>
         </form>
-        <ul id=""></ul>
     </section>
-  </body>
-</html>
+    <section class = "formBox">
+        <div>
+            <ul id="listOfParties"></ul>
+        </div>
+    </section>
+  </body

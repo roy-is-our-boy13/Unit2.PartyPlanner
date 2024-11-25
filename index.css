@@ -2,3 +2,36 @@ body
 {
     background-color: beige;
 }
+
+.HeaderFormat
+{
+    border-style: solid;
+    padding: 30px;
+    text-align: center;
+    background: #29614d;
+    color: white;
+    font-size: 30px;
+}
+.colorButton
+{
+    background-color: #29614d;
+    border-style: solid;
+    border: 20px;
+    color: white;
+    padding: 17px 37px;
+    text-align: center;
+    font-size: 15px;
+    margin: 9px;
+    cursor: pointer;
+}
+
+.textMargin
+{
+    margin: 20px;
+}
+
+.formBox
+{
+    border-style: solid;
+    margin: center;
+}
